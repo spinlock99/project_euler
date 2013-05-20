@@ -7,12 +7,17 @@ gem 'rails', '4.0.0.beta1'
 
 group :development do
   gem 'sqlite3', '1.3.7'
+  gem 'rspec-rails', '2.13.1'
+end
+
+group :test do
+  gem 'selenium-webdriver', '2.0'
+  gem 'capybara', '2.1.0.rc1'
 end
 
 group :production do
   gem 'pg', '0.14.1'
 end
-
 
 # Gems used only for assets and not required
 # in production environments by default.
