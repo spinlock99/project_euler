@@ -4,7 +4,7 @@ describe "StaticPages" do
   describe "Home Page" do
     it "Should have content 'Sample App'" do
       visit '/static_pages/home'
-      expect(page).to have_content('Sample App')
+      expect(page).to have_content('Project Euler')
     end
     it "Should have the right title" do
       visit '/static_pages/home'
