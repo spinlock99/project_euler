@@ -27,4 +27,19 @@ describe "StaticPages" do
     it { should have_content( 'Problem 1' ) }
     it { should have_title( 'Problem 1' ) }
   end
+  describe "Problem 2" do
+    before { visit( problem2_path ) } 
+    it { should have_content( 'Problem 2' ) }
+    it { should have_title( 'Problem 2' ) }
+  end
+  describe "Problem 3" do
+    before { visit( problem3_path ) }
+    it { should have_content( 'Problem 3' ) }
+    it { should have_title( 'Problem 3' ) }
+  end
+  describe "Problem 4" do
+    before { visit( problem4_path ) }
+    it { should have_content( 'Problem 4' ) }
+    it { should have_title( 'Problem 4' ) }
+  end
 end

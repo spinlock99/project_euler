@@ -1,3 +1,5 @@
+require 'prime'
+
 class StaticPagesController < ApplicationController
   def home
   end
@@ -25,6 +27,38 @@ class StaticPagesController < ApplicationController
     end
     @multiples.each do |n|
       @answer += n
+    end
+  end
+
+  def problem2
+    @answer = 0
+    penultimate = 1
+    ultimate = 1
+    fibanacci = 2
+    while (fibanacci < params[:max].to_i)
+      fibanacci = penultimate + ultimate
+      penultimate = ultimate
+      ultimate = fibanacci
+      if (fibanacci % 2 == 0) then @answer += fibanacci end
+    end
+  end
+
+  def problem3
+    @answer = 0
+    Prime.each( Math.sqrt( params[:max].to_i ) ) do |prime|
+      if (params[:max].to_i % prime == 0) then @answer = prime end
+    end
+  end
+
+  def problem4
+    @answer = 0
+    for i in 1 .. params[:max].to_i
+      for j in 1 .. params[:max].to_i
+        product = i * j
+        if ((product > @answer) && StaticPage.palindrome( product )) then
+          @answer = product
+        end
+      end
     end
   end
 end

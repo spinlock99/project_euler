@@ -1,0 +1,13 @@
+<div class = "center hero-unit" >
+  <h1><%= yield( :title ) %></h1>
+  <%= yield( :examples ) %>
+
+  <h2><%= yield( :problem_statement ) %></h2>
+  <%= form_tag( { :controller => 'static_pages', :action => yield( :action ) }, 
+    :method => 'get' ) do %>
+    <%= text_field_tag( :max, 'max number' ) %><br>
+  <% end %>
+  <% if (@answer > 0) %>
+    <%= yield( :answer_label ) %><%= @answer %>
+  <% end %>
+</div>
